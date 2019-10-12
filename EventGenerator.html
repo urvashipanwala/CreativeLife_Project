@@ -1,0 +1,76 @@
+<!-- You are in charge to create an HTML form to enter events into a calendar.
+Required information to enter an event include: -->
+
+<!-- title of the event
+start date and time
+end date and time
+description
+some information about the host
+the list of people to invite
+(are there other information that you can think of? for instance repeating events?) -->
+
+<!-- Create the HTML of the form that can handle this type of events. Include this form on a Web page of you existing Web site -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Creator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="formmain">
+    <header>
+        <a href="index.html">
+            <img src="image/logo1.svg" alt="Logo of this website" title="The logo of the website and a way to go back to main page." class = "hlogo">
+        </a>
+    </header>
+    <form action="/" method="post">
+        <div align="center"><h2>Event Registration</h2></div>
+        <fieldset>
+            <legend>Event Details:</legend><br/>
+            <spam class="required">*</spam> indicates a required field<br/><br/>
+            <div class="col-25">Title<spam class="required">*</spam></div> 
+                <div class="col-75"><input type="text" name="title" size="40" maxlength="100" required="required"></div></label>
+            <label for="description"><div class="col-25">Description<spam class="required">*</spam></div></label>
+                <div class="col-75"><textarea rows="5" cols="50" id="description" placeholder="Description of the event" required="required" ></textarea></div>
+            <div class="col-25">Location </div>
+                <div class="col-75"><input type="text" name="location" size="40" maxlength="100" ></div>
+               
+            <hr>
+                
+            <div class="col-25">All Day</div>
+                <div class="col-75"><input type="radio" name="allday" id="yes" value="Yes" /><label for="yes">Yes</label>
+                <input type="radio" name="allday" id="no" value="No" checked="checked" /><label for="no">No</label><br/></div>
+            <div class="col-25">Date/Time from<spam class="required">*</spam></div> 
+                <div class="col-75"><input type="date" name="startdate" required="required">&nbsp;&nbsp;&nbsp;
+                <input type="time" name="starttime" required="required"><br/></div>
+            <div class="col-25">Date/Time to<spam class="required">*</spam></div> 
+                <div class="col-75"><input type="date" name="enddate" required="required">&nbsp;&nbsp;&nbsp;
+                <input type="time" name="endtime" required="required"><br/></div>
+                
+            <hr>
+                
+            <div class="col-25">Repeat</div>
+                <div class="col-75"><input type="radio" name="repeat" id="yes" value="Yes" /><label for="yes">Yes</label>
+                <input type="radio" name="repeat" id="no" value="No" checked="checked" /><label for="no">No</label><br/></div>
+            <div class="col-25">Frequency</div>
+                <div class="col-75"><input type="radio" name="frequency" id="daily" value="daily" /><label for="daily">Daily</label>
+                <input type="radio" name="frequency" id="weekly" value="weekly" /><label for="weekly">Weekly</label>
+                <input type="radio" name="frequency" id="monthly" value="monthly" /><label for="monthly">Monthly</label>
+                <input type="radio" name="frequency" id="yearly" value="yearly" /><label for="yearly">Yearly</label><br/></div>
+            <div class="col-25">Until </div><div class="col-75"><input type="date" name="until"></div>
+        </fieldset>
+        <fieldset>
+            <legend>If Any, Event Host:</legend><br/>
+            <label><div class="col-25">Person hosting this event</div> 
+                <div class="col-75"><input type="text" name="hostname" size="30" maxlength="50" ></div></label>
+            <div class="col-25">Contact number</div>
+                <div class="col-75"><input type="text" name="number" size="15" maxlength="10" ></div>
+            <div class="col-25">Email</div> 
+                <div class="col-75"><input type="email" name="email" size="30" maxlength="100" ></div>
+            <div class="col-25">Upload the list of people to invite</div>
+                <div class="col-75"><input type="file" name="inivitelist" /></div>
+            <div align="center"><input type="submit" value="Create Event" />
+            <input type="reset" value="Reset"></div>
+        </fieldset>
+    </form>
+</body>
+</html>
