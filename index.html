@@ -3,10 +3,94 @@
     <head>
         <meta charset="UTF-8">
         <title>Creative Life</title>
+        <meta name="viewport" content="width=device-width, initial-scale=10.0, maximum-scale=1.0" />
         <link rel="icon" type="image/png" href="favicon_io/android-chrome-192x192.png">
         <link rel="icon" type="image/png" href="favicon_io/favicon-16x16.png">
         <link rel="icon" type="image/png" href="favicon_io/favicon-32x32.png">
         <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+        .hero-text{
+            display: grid;
+            gap: 70px;
+            row-gap: 20px;
+            grid-auto-rows: auto;
+            grid-template-areas: "header" "acry" "cray" "pencil" "other";
+        }
+        .artist{
+            display: grid;
+            gap: 70px;
+            row-gap: 20px;
+            margin: 2% 10% 2% 10%;
+            padding: 1%;
+            grid-template-areas: "title" "image" "description";
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+        @media only screen and (min-width: 720px)
+        { 
+            .hero-text{
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas:
+                    "header header"
+                    "acry cray"
+                    "pencil other";
+            }
+            .artist{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-areas: "title image" "description image";
+            }
+        }
+        @media only screen and (min-width: 300px) and (max-width: 720px)
+        {
+            .hero-text{
+                grid-template-columns: 2fr 2fr;
+                grid-template-areas:
+                    "header header"
+                    "acry cray"
+                    "pencil other";
+            }
+            .artist{
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                grid-template-areas: "title title" "image description";
+            }
+        }
+        .hero-text h1{
+            font-size: 400%;
+            grid-area: header;
+        }
+        .acry{
+            grid-area: acry;
+        }
+        .cray{
+            grid-area: cray;
+        }
+        .pencil{
+            grid-area: pencil;
+        }
+        .other{
+            grid-area: other;
+        }
+        .artist h3{
+            grid-area: title;
+            color: #3B00E9;
+            font-size-adjust: inherit;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 200%;
+        }
+        .image {
+            grid-area: image;
+            width: 80%;
+            align-items: center;
+            padding: 10%;
+        }
+        .description{
+            grid-area: description;
+            font-family: cursive;
+            text-align: justify;
+        }
+        </style>
     </head>
     <body>
         <header>
@@ -17,12 +101,18 @@
         <div class="hero-image">
             <div class="hero-text">
             <h1>My Portfolio</h1>
-            <a href= "acrylic_watercolor_paintings.html" target="_self">Acrylic and Watercolor Paintings</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href= "crayons_sketchpen_paintings.html" target="_self">Crayon and Sketch-pen Drawings</a><br/>
-            <a href= "pencil_paintings.html" target="_self">Pencil Drawings</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <a href= "other_creativity.html" target="_self">Other Creativity</a>
+            <a href= "acrylic_watercolor_paintings.html" target="_self" class="acry">Acrylic and Watercolor Paintings</a>
+            <a href= "crayons_sketchpen_paintings.html" target="_self" class="cray">Crayon and Sketch-pen Drawings</a>
+            <a href= "pencil_paintings.html" target="_self" class="pencil">Pencil Drawings</a>
+            <a href= "other_creativity.html" target="_self" class="other">Other Creativity</a>
             </div>
         </div>
+        <div class="artist">
+            <h3>Leonardo Da Vinci<em>(1452-1519)</em></h3>
+            <img src="https://img.etimg.com/thumb/msid-69201397,width-643,imgsize-912935,resizemode-4/ets-dualpane-2019-05-06t161833-568.jpg" class="image">
+            <p class="description">Leonardo da Vinci was an artist, architect, anatomist, engineer, mathematician, sculptor, inventor, geologist, and botanist. Da Vinci was a great Italian artist who was interested in everything. According to da Vinci's belief, science and art both profoundly influence each other. In his presence from 1452 to 1519, he graced the world by leaving a significant legacy not only in the field of art but in science, as well. Even after his death, his inventions influenced and gave people the inspiration and imagination to create and expand more on his designs.</p>
+        </div>
+        <hr>
         
     <footer>
         <div align="center"><h5><a href= "EventGenerator.html" target="_self">Admin Form Page</a></h5></div>
